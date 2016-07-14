@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .a{
+            width:200px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        .b{background-color: red;}
+    </style>
+</head>
+<body>
+    <div class="a">
+    </div>
+</body>
+
+<script>
+
+
+
+var c=document.querySelector(".a");
+c.addEventListener('mousedown', addClass.bind(this, c, 'b'));
+c.addEventListener('mouseup', removeClass.bind(this, c, 'b'));
+
+function addClass(Tool,Cla){
+    var CN=Tool.className;
+    CN=CN+" "+Cla;
+    Tool.className=CN;
+}
+function removeClass(Tool,Cla){
+    var CN=Tool.className;
+    var CN2=CN.replace(Cla,"");
+    var newCN=CN2.replace(" ","");
+    Tool.className=newCN;
+}
+</script>
+</html>
