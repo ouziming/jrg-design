@@ -13,16 +13,22 @@
   *{margin:0;padding:0}
   a{text-decoration:none;}
   ul li{list-style:none;}
+  body{
+  	height: 100vh;
+  	background-color: #fbdaaa;
+  }
   .warpped{
     position: relative;
+    width: auto;
+    margin: 0 10px;
     /*overflow: hidden;*/
   }
   .item{
     position: absolute;/*位置*/
-    width:250px;/*大小*/
+    width:240px;/*大小*/
     margin-top: 10px;
     margin-left:20px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    box-shadow: 1px 2px 10px rgba(0,0,0,.2);
     transition:all 1s;
   }
   .h1{
@@ -73,16 +79,24 @@
         <div class="item h2"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://a.hiphotos.baidu.com/zhidao/pic/item/0ff41bd5ad6eddc4f995afa438dbb6fd5266337a.jpg" alt=""></div>  
         <div class="item h3"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://www.bz55.com/uploads/allimg/130516/1-130516160615.jpg" alt=""></div>  
         <div class="item h1"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://tupian.enterdesk.com/2013/xll/007/09/06/1.jpg" alt=""></div>
-        <div class="item h2"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://image.tianjimedia.com/uploadImages/2012/004/O5M4I890VRR6.jpg" alt=""></div> 
+        <div class="item h2"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201605/27/lykan_hypersport-001.jpg" alt=""></div>
         <div class="item h3"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://p4.image.hiapk.com/uploads/allimg/140611/7730-140611145644.jpg" alt=""></div>   
         <div class="item h1"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://m2.quanjing.com/2m/glow004/gwp107045.jpg" alt=""></div>        
         <div class="item h2"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://tupian.enterdesk.com/2013/xll/012/05/10/7.jpg" alt=""></div>
-        <div class="item h3"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://dl.bizhi.sogou.com/images/2012/02/18/52291.jpg" alt=""></div> 
+        <div class="item h3"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://dl.bizhi.sogou.com/images/2012/02/18/52291.jpg" alt=""></div>
+        <div class="item h1"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://img.ivsky.com/img/tupian/pre/201606/06/russian_federation-003.jpg" alt=""></div>
+        <div class="item h2"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201606/28/adidas-002.jpg" alt=""></div> 
+        <div class="item h3"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201606/07/fanxingdiandian_wenxin_langmansheying-001.jpg" alt=""></div>   
+        <div class="item h1"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://img.ivsky.com/img/tupian/pre/201606/01/jinyanghu-002.jpg" alt=""></div>        
+        <div class="item h2"><img src="http://img.ui.cn/data/file/4/5/9/209954.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201604/25/poodle.jpg" alt=""></div>  
     </div>
 <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
 
 <script type="text/javascript">
-  
+	
+
+
+  //以下是瀑布流demo代码
   var waterfall = (function(){//立即执行函数
       function init(){
           var winWidth = $(window).width();//窗口宽度，现时是父容器宽度
@@ -135,38 +149,79 @@
 
 
 //下面代码：懒加载效果
+// var $img = $('.warpped img')
+// console.log($img)
+// function checkShow($node){
+// 	var self = $node
+// 	console.log(self)
+// 	$(window).on('scroll',function(){
+// 	if(self.attr('isLoaded')){return}
+// 			isShow($node)
+// 	})
+// }
+// checkShow($img)
 
-// 步骤一：遍历全部的元素,
-// 步骤二：当每一个元素在scroll滚动的情况下，去观察每一元素，只要是做了过滤标记的都不要再观察了
+// function isShow($node){//判断怎样情况才要展示出来
+// 	$node.each(function(){
+// 		var scrollH = $(window).scrollTop(),//页面顶部距离窗口顶部的滚动距离
+// 			winH = $(window).height();//浏览器页面的高度
+// 			Top = $(this).offset().top;//元素距画卷的顶部距离
+// 			console.log(Top)
+// 		if((scrollH +winH) > Top){
+// 			showImg($(this))
+// 		}
+// 	})
+// }
+
+// function showImg($panel){//在展示图片的同时该处理什么
+// 	var dataSrc = $panel.attr('data-src')
+// 		$panel.attr('src', dataSrc)
+// 		$panel.attr('isLoaded', true)
+// }
+
+
+
+//以下是懒加载demo代码
+// 步骤一：在整个windows滚动的背景下，遍历全部的元素,记住：必须要在遍历的大前提下
+// 步骤二：当每一个元素在scroll滚动的情况下，去观察每一元素，只要是做了过滤标记的都不要再去遍历了
 // 步骤三：当有元素是在(scrollH +winH) > Top的条件下，证明有元素在可视范围之内
 // 步骤四：在可视范围内就把src改成data-src，并把它加上过滤标签
 
 
+$(function(){
+		$(window).on('scroll',function(){//scroll事件
+			var $img = $('.warpped img');
+			
+			$img.each(function(){//遍历滚动下的每一个图片
+				if($(this).attr('isLoaded')){return}//有过滤标记的以后就无需再操作
 
-function checkShow($node){
-	var $img = $('.warpped img');
-	if($(this).attr('isLoaded')) return;
-	$img.each(function(){
-		
-		var scrollH = $(window).scrollTop();//页面顶部距离窗口顶部的滚动距离
-		var	winH = $(window).height();//浏览器页面的高度
-		var	thisTop = $(this).offset().top;//元素距画卷的顶部距离
-		$(window).on('scroll',function){}
-			console.log(thisTop)
-			if((scrollH +winH) > thisTop){
-				showImg($(this))
-				console.log(2)
+				var scrollH = $(window).scrollTop();//页面顶部距离窗口顶部的滚动距离
+				var	winH = $(window).height();//浏览器页面的高度
+					// console.log(this)每一张图片
+				var	Top = $(this).offset().top;//元素距画卷的顶部距离,关键：这里的this必须是每次遍历的一张图片
+					// console.log(Top)每张图片的高度
+				if((scrollH +winH) > (Top+150)){
+					showImg($(this))
+				}
+			})
+		// function isShow(){
+		// 	var scrollH = $(window).scrollTop();//页面顶部距离窗口顶部的滚动距离
+		// 	var	winH = $(window).height();//浏览器页面的高度
+		// 	console.log(this)
+		// 	var	Top = $(this).offset().top;//元素距画卷的顶部距离
+		// 	console.log(Top)
+		// 	if((scrollH +winH) > Top){
+		// 		showImg($(this))
+		// 	}
+		// }
+			
+		function showImg($panel){//在展示图片的同时该处理什么，这里的$panel只是一个形参而已
+			var dataSrc = $panel.attr('data-src');
+			$panel.attr('src', dataSrc)
+			$panel.attr('isLoaded', true)
 		}
 	})
-}
-checkShow($('.warpped img'))
-
-
-function showImg($panel){//在展示图片的同时该处理什么
-	var dataSrc = $panel.attr('data-src');
-		$panel.attr('src', dataSrc)
-		$panel.attr('isLoaded', true)
-}
+})   
 
 </script>
 </body>
