@@ -1,1 +1,196 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>方方上课的播放器</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_1469720145_0534034.css">
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body{
+  margin:0;
+  background: #D2D5D6;
+  font-size: 12px;
+}
+
+html,body{
+  height: 100%;
+}
+
+.musicPlayer-wrapper{
+  text-align: center;
+  border: 1px solid black;
+  height: 100%;
+  line-height: 1;
+}
+
+.musicPlayer-wrapper:before{
+  content:'';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.musicPlayer-wrapper:after{
+  content:'';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.musicPlayer{
+  display: inline-block;
+  width: 250px;
+  height: 300px;
+  background: #E9EDEE;
+  vertical-align: middle;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.musicPlayer  .cover{
+  height: 80px;
+  overflow: hidden;
+}
+.musicPlayer .cover img{
+  width: 100%;
+}
+
+.musicPlayer .summary-and-actions{
+    overflow: hidden;
+    text-align: left;
+}
+.musicPlayer .summary{
+      float: left;
+}
+.musicPlayer .actions{
+      float: right;
+}
+</style>
+</head>
+<body>
+<audio id=audio src=""></audio>
+
+<div class="musicPlayer-wrapper">
+  <div class="musicPlayer">    
+    <div class="cover"><!-- 封面 -->
+      <img src="http://www.newsyc.net/d/file/tuijian/2016-04-18/27de72268c2990ee02fab2d046ab3691.jpg" alt="">
+    </div>
+
+    <div class="summary-and-actions">  
+      <div class="summary"><!-- 左内容 -->
+        <h1>认真的雪</h1>
+        <h2>薛之谦</h2>
+      </div>
+
+      <div class="actions"><!-- 右内容 -->
+        <a id="share" href="#" class="iconfont icon-share" target=_blank></a>
+        <span class="iconfont icon-iconstar"></span>
+        <span class="iconfont icon-heart"></span>
+      </div>    
+    </div>
+    
+    <div class="progress"><!-- 进度条 -->
+      <span id=time></span>
+      <progress max=0 value=0></progress>
+    </div>
+    
+    <div class="controls"><!--控制按钮-->
+      <span id=play class="iconfont icon-bofangqi01"></span>
+      <span id=pause class="iconfont icon-bofangqizanting"></span>
+      <span id=prev class="iconfont icon-kuaitui"></span>
+      <span id=next class="iconfont icon-kuaijin"></span>
+      
+      <span class="iconfont icon-xunhuanbofang"></span>
+      <span class="iconfont icon-suijibofang"></span>
+    </div>
+    
+  </div>
+</div>
+<script>
+	var songs = [{
+	  url:'http://61.166.128.39/m10.music.126.net/20160728220344/becb237c9697e229b2fc33185d3b329a/ymusic/cc59/35e3/aaa6/e5613daff87d6bfc08e2eaf3a2c8c779.mp3?wshc_tag=1&wsts_tag=579a0ae9&wsid_tag=7d47a090&wsiphost=ipdbm',
+	  name:'Sunburst',
+	  singer: 'tobu'
+	},{
+	  url:'http://61.166.128.39/m10.music.126.net/20160728220438/ffd2b995098c7d94ceb39fc5b831b6e3/ymusic/3fea/0b85/d6e2/8e6221f192d678935851fd7ef1854cc0.mp3?wshc_tag=0&wsts_tag=579a0b1d&wsid_tag=7d47a090&wsiphost=ipdbm',
+	  name: 'life',
+	  singer:'tobu'
+	},{
+	  url:'http://61.166.128.37/m10.music.126.net/20160728220507/48947879d690a80f214640f6b6411152/ymusic/a954/73b7/5463/e3f91a919b476a6b8ede490403ef80a1.mp3?wshc_tag=1&wsts_tag=579a0b3a&wsid_tag=7d47a090&wsiphost=ipdbm',
+	  name:'fade',
+	  singer:'Alan Walker'
+}]
+
+var audio = $('audio').get(0)
+var progress = $('progress').get(0)
+var current = 0
+// n starts from 0
+function play(n){
+  
+  if(n>= songs.length){
+    n = 0
+  }
+  if(n<0){
+    n = songs.length - 1
+  }
+  
+  var song = songs[n]
+  audio.pause()
+  
+  audio.src = song.url
+  audio.play()
+  current = n
+  progress.value=0
+  
+  setTimeout(function(){
+     progress.max = audio.duration
+  },100)
+  
+  updateProgress()
+  
+}
+
+var interval
+// update the progress
+function updateProgress(){
+  
+  interval = setInterval(update,1000)
+  
+  function update(){
+    console.log('update')
+    progress.value = (audio.currentTime)
+    time.innerHTML = Math.round(audio.currentTime)
+  }
+}
+
+function stopUpdateProgress(){
+  clearInterval(interval)
+}
+
+var $pauseButton = $('#pause')
+$pauseButton.on('click', function(){
+  audio.pause()
+  stopUpdateProgress()
+})
+
+$('#play').on('click',function(){
+  play(current)
+})
+
+$('#prev').on('click',function(){
+  play(current - 1)
+})
+
+$('#next').on('click',function(){
+  play(current + 1)
+})
+
+$('#share').get(0).href = 'http://service.weibo.com/share/share.php?url='+encodeURIComponent(location.href)+'&title=hi,' + encodeURIComponent(location.href)
+
+</script>
+</body>
+</html>
