@@ -1,0 +1,524 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-08-05 12:46:04
+ * @version $Id$
+ */
+
+/**移动端样式**/
+html{
+	font-size:12px;
+	font-family: "microsoft yahei"
+}
+
+/*第一页*/
+@media (max-width: 450px) {
+	.head{
+		font-size: 1rem;
+	    width: 100%;
+	    height: 680px;
+	    overflow: hidden;
+	    background-size:100% 100%;
+	}
+	.head-wrapper{
+	    width:100%;
+	    height: 680px;
+	    background-color: rgba(255, 255, 255, 0.31);
+	}
+}
+@media (max-width: 450px) {
+	.nav{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.nav .mainNav{
+		width:100%;
+	}
+
+	.nav .mainNav-left{
+		font-size: 1rem;
+	    float: left;
+	    position: relative;
+	    left: -20px;
+	}
+	.mainNav .personMessage{
+		width: 120px;
+		left:0;
+	}
+	.mainNav .personMessage li a{
+		font-size: 1rem;
+	}
+
+	.mainNav .mainNav-left .logo{
+		overflow: none;
+		position: relative;
+    	left: -25px;
+	}
+
+	.nav .mainNav-right{
+		display: none;
+	}
+}
+
+@media (max-width: 450px){
+	.abouts-me .paging-button{
+		display: none;
+	}
+
+}
+
+@media (max-width: 450px){
+	.abouts-me .per-title{
+		height: 290px;
+	}
+	.abouts-me .per-title span{
+	    font-size: 3rem;
+	    text-overflow: ellipsis;
+	   	white-space: normal;
+	    overflow: hidden; 
+	    line-height: 45px; 
+	    height: 100px;
+	    display: block;
+	}
+
+	.abouts-me .am-tags{
+		margin:15px auto;
+	}
+	.abouts-me .am-tags .input{
+		font-size: 1rem;
+		width:185px;
+	}
+	.abouts-me .am-line{
+		width: 100%;
+	}
+	.am-desigin .bg{
+		float:left;
+		display: inline-block;
+	    width: 86px;
+	    height: 50px;
+	    line-height: 22px;
+	    margin: 1px 2px;
+	    overflow: hidden;
+	}
+
+	.abouts-me .am-desigin{
+		width: 285px;
+		margin: 15px auto;
+		overflow: hidden;
+	}
+	.am-desigin .bg span{
+		font-size: 1rem;
+     	display: none;
+    	text-decoration: underline;
+    	white-space: normal;
+    	word-wrap: break-word;
+    	width: 100%;
+    	height: 100%;
+	}
+}
+
+
+/*第二页*/
+@media (max-width: 450px){
+	.main{	
+		width: 100%;
+		height: 680px;
+		font-size: 1rem;
+		overflow: hidden;
+	}
+
+	.main .skill-title{
+		font-size: 1rem;
+		width: 300px;
+		float:none; 
+		text-align: center !important;
+   		overflow: hidden;
+	}
+	
+	.skills .skill-wrapped{
+	    margin: 50px 5px;
+		height: auto;
+	}
+}
+
+@media (max-width: 450px){
+	.main .skill-tree{
+		max-width: 300px;
+    	margin: 0 auto;
+	}
+	.main .skill-tree .level span{
+		visibility: hidden;
+	}
+	.main .skill-tree .level{
+		position: relative;
+    	left: 0px;
+    	width:100%;
+	}
+
+	.bar-chart .column{
+		/*display: block !important;*/
+		margin:0 5px;
+		width:50px;
+	}
+	.bar-chart .column span{
+		font-size: 1rem;
+	}
+	.bar-chart .column i{
+		font-size: 1.2rem;
+	}
+	.bar-chart{
+		position: absolute;
+		left: 0px;
+		width:320px;
+	}
+	.skill-tree .green{
+	    -webkit-animation: Green 2s;
+	            animation: Green 2s;
+	    position: absolute;
+	    bottom: 3px;
+	    left: 0px !important;
+	    height: 88%;
+	    border: 1px solid #8dc5be;
+	    /* border-color: #8dc5be; */
+	    background-color: #b0dbd6;
+	    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5fb2a8), color-stop(1, #b0dbd6));
+	}
+	.bar-chart .green span{
+    	position: relative;
+    	bottom: -261px;
+	}
+	.bar-chart .green i{
+    	position: relative;
+    	bottom: -201px;
+	}
+
+
+	.skill-tree .pink {
+	    -webkit-animation: Pink 2s;
+	            animation: Pink 2s;
+	    position: absolute;
+	    bottom: 3px;
+	    left: 60px !important;
+	    height:85%;
+	    border: 1px solid #ebc0b5;
+	    /*border-color: #ebc0b5;*/
+	    background-color: #f4dcd6;
+	    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #e1ae9e), color-stop(1, #f4dcd6));
+	}
+	.bar-chart .pink span{
+	    position: relative;
+	    bottom: -251px;
+	}
+	.bar-chart .pink i{
+	    position: relative;
+	    bottom: -190px;
+	}
+
+
+	.skill-tree .yellow {
+	    -webkit-animation: Yellow 2s;
+	            animation: Yellow 2s;
+	    position: absolute;
+	    bottom:3px;
+	    left: 120px !important;
+	    height: 60%;
+	    border: 1px solid #e7af30;
+	    /*border-color: #e7af30;*/
+	    background-color: #efc563;
+	    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dfae36), color-stop(1, #efc563));
+	}
+	.bar-chart .yellow span{
+	    position: relative;
+	    bottom: -168px;
+	}
+	.bar-chart .yellow  i{
+	    position: relative;
+	    bottom: -109px;
+	}
+
+
+	.skill-tree .brown {
+	    -webkit-animation: Brown 2s;
+	            animation: Brown 2s;
+	    position: absolute;
+	    bottom:3px;
+	    left: 180px !important;
+	    height: 68%;
+	    border: 1px solid #dcb386;
+	    /*border-color: #dcb386;*/
+	    background-color: #dcba83;
+	    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #bc8e5b), color-stop(1, #dcba83));
+	}
+	.bar-chart .brown span{
+	    position: relative;
+	    bottom: -194px;
+	}
+	.bar-chart .brown i{
+	    position: relative;
+	    bottom: -136px;
+	}
+
+
+	.skill-tree .red {
+	    -webkit-animation: Red 2s;
+	            animation: Red 2s;
+	    position: absolute;
+	    bottom: 3px;
+	    left: 240px !important;
+	    height: 40%;
+	    border: 1px solid #dcb386;
+	    /* border-color: #dcb386; */
+	    background-color: #dcba83;
+	    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #de6955), color-stop(1, #ff9b89));
+	}
+	.bar-chart .red span{
+	    position: relative;
+	    bottom: -103px;
+	}
+	.bar-chart .red i{
+	    position: relative;
+	    bottom: -44px;
+	}
+
+}
+
+
+/*第三页*/
+@media (max-width: 450px){
+	.tag-table{
+		width: 100%;
+		height:680px;
+	}
+	.tag-table .skill-table{
+		position: relative;
+		top: 30px;
+   		width: 320px;
+    	margin:0 auto;
+	}
+	.tag-table .skill-tag{
+		margin: 10px auto;
+		width: 300px;
+		position: relative;
+		left: 0px;
+		font-size: 1rem;
+	}
+
+	.tag-table .canvas-wrap{
+		display: none !important;
+	}
+
+	.tag-table .panel-wrap{
+	    margin: 0 auto;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+
+	.tag-table .summary .summary-list{
+		width: 182px;
+		left: 84px;
+	}
+	
+	.tag-wrapper .skill-ability{
+		padding-top: 80px;
+	}
+
+	.skill-tag .summary .summary-list{
+		line-height: 25px;
+	}
+
+	.summary-list ul>li{
+		width: 94%;
+    	margin-bottom: 5px;
+    	left: 13px;
+	}
+
+	.skill-tag .panel-wrap .panel{
+		width: 66px;
+	}
+	
+}
+
+
+/*第四页*/
+@media (max-width: 450px){
+	.content{
+		width: 100%;
+		height:680px;
+		background-size:cover;
+	}
+
+	.content .design .design-title{
+		padding-top: 10px
+	}
+	.content .design .lest-wrap{
+		width: 270px;
+	    height: 550px;
+	    margin: 0 auto;
+	}
+	.content .design .lest-wrap .lest-one{
+		width: 255px;
+	    padding: 0 10px;
+	    height: 550px;
+	    margin: 0 auto;
+	}
+	.content .design .lest-wrap .lest-two{
+		width: 255px;
+	    height: 550px;
+	    margin: 0 auto;
+	}
+
+	.content .design .lest-one .box{
+		display: block;
+	    position: relative;
+	    margin: 8px;
+	    left: 0px;
+	    top: 0px;
+	    width: 110px;
+    	height: 110px;
+	    float: left;
+	}
+	.content .design .lest-one .box-warpper{
+		width:106px;
+		height: 106px;
+	}
+	.design .lest-one .box4-warpper{
+		background-position: -5px;
+	}
+	.design .lest-one .box5-warpper{
+		background-position: -25px;
+	}
+	.design .lest-one .box7-warpper{
+		background-position: -22px;
+	}
+	.content .design .lest-one .box span{
+		display: none;
+	}
+
+	.content .design .lest-two .package-warpper{
+		margin: 5px auto;
+		height: 490px;
+	}
+
+	.content .design .lest-two .package-warpper .package-content{
+		width: 215px;
+    	height: 115px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package{
+		width: 200px;
+    	height: 90px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package-one{
+    	background-position-x:5px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package-three{
+    	background-position-x: 0px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package-four{
+    	background-position-x: 0px;
+	}
+	.content .design .lest-button{
+		bottom: 10px;
+	}
+	.content .design .package-bottom{
+		display: none;
+	}
+	.design .lest-two .package-content span {
+    	color: #bdbd93;
+	}
+}
+
+@media (max-width: 320px){
+	.content .design .lest{
+		width: 225px;
+		height: 510px;
+		margin: 0 auto;
+	}
+	.content .design .lest-wrap {
+		width: 245px;
+    	height: 550px;
+    	margin: 0 auto;
+	}
+	.content .design .lest-wrap .lest-one{
+		width: 232px;
+	    padding: 0 10px;
+	    height: 550px;
+	    margin: 0 auto;
+	}
+	.content .design .lest-wrap .lest-two{
+		width: 232px;
+	    height: 550px;
+	    margin: 0 auto;
+	}
+	.content .design .lest-one .box{
+		display: block;
+		position: relative;
+		margin: 5px;
+		left: 0px;
+		top:0px;
+		width:100px;
+		height: 100px;
+		float:left;
+	}
+	.content .design .lest-one .box-warpper{
+		width:96px;
+		height: 96px;
+	}
+	.design .lest-one .box4-warpper{
+		background-position: -5px;
+	}
+	.design .lest-one .box5-warpper{
+		background-position: -25px;
+	}
+	.design .lest-one .box7-warpper{
+	 	background-position: -22px;
+	}
+	.content .design .design-title{
+		padding-top: 10px;
+    	font-size: 1rem;
+	}
+	.content .design .lest-two .package-warpper .package-content{
+		width:230px;
+		height: 115px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package{
+		width: 200px;
+    	height: 90px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package-one{
+    	background-position-x:5px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package-two{
+	    background-position-x: 0px;
+	}
+	.content .design .lest-two .package-warpper .package-content .package-three{
+    	background-position-x: 0px;
+	}
+	.design .lest-two .package-content span {
+		font-size: 1.2rem;
+    	color: #bdbd93;
+	}
+}
+
+
+
+/*第五页*/
+@media (max-width: 450px){
+	.footer{
+		width: 100%;
+		height: 680px;
+		font-size: 1.3rem;
+	}
+	.footer .foot-note{
+		bottom: 0px;
+	}
+	.footer .wrapped-foot{
+		margin:15px auto;
+	}
+	.footer .footMain>span{
+		font-size: 1rem;
+		color: #1d2f51;
+		font-weight: normal;
+	}
+}

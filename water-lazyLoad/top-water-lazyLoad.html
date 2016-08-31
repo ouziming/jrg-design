@@ -1,160 +1,15 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
-  <title>3D效果轮换（海贼王）</title>
-=======
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>回到顶部+瀑布流+懒加载</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
->>>>>>> 5d92b123b694b74b4636e5223761f753ef13f888
 </head>
-<style type="text/css">
-<<<<<<< HEAD
-*{margin:0;padding: 0}
-ul,ol,li{list-style: none;}
-a{text-decoration: none;}
 
-body{
-  font:12px/1.5 Arial,Verdana,"\5b8b\4f53",serif;
-    -webkit-font-smoothing: antialiased;/*矿锯齿*/
-    /*font-size: 62.5%;16px*62.5%=10px  10px=1em*/
-    background:url(images/3D.Slides.image/bj.jpg);
-    background-size: 100%; 
-    background-repeat: no-repeat;
-}
-.wrap{
-  margin:0px auto;
-  position:relative;
-  width:1200px;
-  height:500px;
-}
-.wrap button{
-  position:absolute;
-  z-index: 1000;
-  width:40px;
-  height: 40px;
-  top:50%;
-  margin-top: -20px;
-  border:1px solid;
-  border-radius: 50%;
-  font-size: 24px;
-  text-align: center;
-  background-color:#fff;
-  color: #c11239;
-  outline: none;
-  cursor:pointer;
-}
-/*.icon-l{
-  display: inline-block;
-    width: 0px;
-    height: 0px;
-    border: 2px solid;
-    border-width: 15px;
-    border-color: transparent white transparent transparent;
-}
-.icon-r{
-  display: inline-block;
-    width: 0px;
-    height: 0px;
-    border: 2px solid;
-    border-width: 15px;
-    border-color: transparent transparent transparent white;
-}*/
-.wrap .btn1{left:0;}
-.wrap .btn2{right:0;}
-.wrap li img{
-  width:720px;
-  height: 430px;
-  display:block;
-}
-li{
-  -ms-transition:all 0.6s;
-  -webkit-transition:all 0.6s;
-  -o-transition:all 0.6s;
-  -moz-transition:all 0.6s;
-  transition:all 0.6s;
-  position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-filter: brightness(0.5);
-    box-shadow: 0 10px 20px rgba(0,0,0,.2);
-    margin-left: -360px;
-    margin-top: -215px;
-}
-li.current{/*中间*/
-  -webkit-filter:brightness(1);
-  z-index: 6;
-}
-li.current-r{/*中右*/
-  -webkit-filter:brightness(0.8);
-  z-index: 5;
-  -webkit-transform:scale(0.9);
-  -o-transform:scale(0.9);
-  -moz-transform:scale(0.9);
-  -ms-transform:scale(0.9);
-  transform:scale(0.9);
-  margin-left:-280px;
-}
-li.current-l{/*中左*/
-  -webkit-filter:brightness(0.8);
-  z-index: 4;
-  -webkit-transform:scale(0.9);
-  -o-transform:scale(0.9);
-  -moz-transform:scale(0.9);
-  -ms-transform:scale(0.9);
-  transform:scale(0.9);
-  margin-left:-440px;
-}
-li.next{/*偏右边*/
-  -webkit-filter:brightness(0.6);
-  z-index: 3;
-  -webkit-transform:scale(0.8);
-  -o-transform:scale(0.8);
-  -moz-transform:scale(0.8);
-  -ms-transform:scale(0.8);
-  transform:scale(0.8);
-  margin-left:-200px;
-}
-li.next-r{/*最右*/
-  -webkit-filter:brightness(0.4);
-  z-index: 2;
-  -webkit-transform:scale(0.7);
-  -o-transform:scale(0.7);
-  -moz-transform:scale(0.7);
-  -ms-transform:scale(0.7);
-  transform:scale(0.7);
-  margin-left:-120px;
-}
-li.prew{/*偏左边*/
-  -webkit-filter:brightness(0.6);
-  z-index: 1;
-  -webkit-transform:scale(0.8);
-  -o-transform:scale(0.8);
-  -moz-transform:scale(0.8);
-  -ms-transform:scale(0.8);
-  transform:scale(0.8);
-  margin-left:-520px;
-}
-li.prew-l{/*最左*/
-  -webkit-filter:brightness(0.4);
-  z-index: 0;
-  -webkit-transform:scale(0.7);
-  -o-transform:scale(0.7);
-  -moz-transform:scale(0.7);
-  -ms-transform:scale(0.7);
-  transform:scale(0.7);
-  margin-left:-600px;
-}
-=======
+<style type="text/css">
   *{margin:0;padding:0}
   a{text-decoration:none;}
   ul li{list-style:none;}
@@ -243,11 +98,11 @@ li.prew-l{/*最左*/
         <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://imga1.pic21.com/bizhi/130918/01196/s25.jpg" alt=""></div>        
         <div class="item h2"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://tupian.enterdesk.com/2013/xll/012/05/10/7.jpg" alt=""></div>
         <div class="item h3"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://dl.bizhi.sogou.com/images/2012/02/18/52291.jpg" alt=""></div>
-        <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://img.ivsky.com/img/tupian/pre/201606/06/russian_federation-003.jpg" alt=""></div>
+       <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://tupian.enterdesk.com/2013/xll/007/09/06/1.jpg" alt=""></div>
         <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201606/28/adidas-002.jpg" alt=""></div> 
-        <div class="item h2"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201606/07/fanxingdiandian_wenxin_langmansheying-001.jpg" alt=""></div>   
-        <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://img.ivsky.com/img/tupian/pre/201606/01/jinyanghu-002.jpg" alt=""></div>        
-        <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201604/25/poodle.jpg" alt=""></div> 
+        <div class="item h2"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://img.ivsky.com/img/bizhi/pre/201605/27/lykan_hypersport-001.jpg" alt=""></div>
+       <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://pic2.desk.chinaz.com/file/201212/5/jialebihaia7.jpg" alt=""></div>        
+        <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://pic2.desk.chinaz.com/file/201212/5/jialebihaia7.jpg" alt=""></div>   
         <div class="item h1"><img src="http://7xt1vz.com1.z0.glb.clouddn.com/loading.gif" data-src="http://imgstore.cdn.sogou.com/app/a/100540002/469034.jpg" alt=""></div>   
     </div>
     <button class="go-top">回到顶部</button>
@@ -344,7 +199,7 @@ $(function(){
 					// console.log(this)每一张图片
 				var	Top = $(this).offset().top;//元素距画卷的顶部距离,关键：这里的this必须是每次遍历的一张图片
 					// console.log(Top)每张图片的高度
-				if((scrollH +winH) > (Top+150)){
+				if((scrollH +winH) > (Top)){
 					showImg($(this))
 				}
 			})
@@ -356,63 +211,7 @@ $(function(){
 		}
 	})
 })   
->>>>>>> 5d92b123b694b74b4636e5223761f753ef13f888
 
-
-</style>
-<body>
-  <div class="wrap">
-    <!-- <div class="button btn1"><div class="icon-l"></div></div> -->
-    <!-- <div class="button btn2"><div class="icon-r"></div></div> -->
-    <button class='btn1'>&lt</button>
-    <button class='btn2'>&gt</button>
-    <ul>
-      <li class="current"><img src="images/3D.Slides.image/3.jpg" alt=""></li>
-      <li class="current-r"><img src="images/3D.Slides.image/4.jpg" alt=""></li>
-      <li class="current-l"><img src="images/3D.Slides.image/5.jpg" alt=""></li>
-      <li class="next"><img src="images/3D.Slides.image/6.jpg" alt=""></li>
-      <li class="next-r"><img src="images/3D.Slides.image/7.jpeg" alt=""></li>
-      <li class="prew"><img src="images/3D.Slides.image/8.jpg" alt=""></li>
-      <li class="prew-l"><img src="images/3D.Slides.image/9.jpg" alt=""></li>
-    </ul>
-  </div>
-</body>
-<<<<<<< HEAD
-  
-<script>
-//图片一直轮换，但是class类型
-  var $current = $('.current'),
-    $ul = $('ul'),
-    $list = $('ul').children();
-    //console.log($list)
-  var $prew = $('.btn1'),
-    $next = $('.btn2');
-    
-  var arr = ['current','current-r','next','next-r','prew-l','prew','current-l'];//细节点：这里的数组排序要看图片的位置
-      //   中间   中右    偏右    最右     最左   偏左  中左
-      
-  $next.on('click',function(){
-    var item = arr.shift()//数组的首位移除
-      arr.push(item)//在数组的末尾添加xxx
-    for (var i=0; i<arr.length; i++) {
-    //console.log(i)
-    //console.log(item[i])
-    $list[i].className = arr[i]
-    }
-  })
-  
-  $prew.on('click',function(){
-    var item = arr.pop()//数组的末尾最后一位移除
-      arr.unshift(item)//在数组的首位添加一位
-    for(var i=0; i<arr.length; i++){
-      $list[i].className = arr[i]
-    }
-  })
 </script>
+</body>
 </html>
-=======
-</html>
->>>>>>> 5d92b123b694b74b4636e5223761f753ef13f888
-=======
-
->>>>>>> ab35509280fb3cdefc3517a9161b8d47f66783b9

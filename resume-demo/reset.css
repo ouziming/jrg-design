@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+    vertical-align: baseline;
+}
+a{
+    color:#1d2f51;
+    font-size:inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+ul ,li{list-style: none;}
+body{
+    /*background-image: url("sucai/Blur-5 (1).png");*/
+    font:18px/1.5 Arial,Verdana,"\5b8b\4f53",serif;
+    -webkit-font-smoothing: antialiased;/*矿锯齿*/
+    background-size: cover;
+}
+.clearfix:after{
+    content:"";
+    display:block;
+    clear:both
+}/*清除浮动*/
+
+.clearfix{*zoom:1;}/*支持IE6*/
+
+
+
+

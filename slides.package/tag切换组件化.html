@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>tab切换组件化</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	*{margin:0;padding:0;}
+	body{
+	font:12px/1.5 Arial,Verdana,"\5b8b\4f53",serif;
+  	-webkit-font-smoothing: antialiased;/*矿锯齿*/
+	}
+	a{text-decoration: none;}
+	ul, li{list-style: none;}
+	.model {
+		box-sizing: border-box;
+		position: relative;
+		display: block;
+		width:100%;
+		height: 300px;
+		background-color: #fff;
+		border:2px solid #fff;
+	}
+	.model:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.model .tab{
+		overflow: hidden;
+	}
+	.model .tab .list{
+		box-sizing: border-box;
+		float:left;
+		text-align: center;
+		border:1px solid #ddd;
+		width:33.3%;
+		height: 50px;
+		line-height: 50px;
+		cursor: pointer;
+	}
+	.model .tab .list.active{
+		background-color: #eef;
+		font-size: 18px;
+	}
+	.model .panel{
+		box-sizing: border-box;
+		font-size: 18px;
+		display: none;
+		width: 100%;
+		height: 150px;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		position: absolute;
+		top: 50px;
+	}
+	.model .panel.active{
+		display: block;
+	}
+
+</style>
+</head>
+<body>
+    <div class="model">
+    	<ul class="tab">
+    		<li class="list active">tag1</li>
+    		<li class="list">tag2</li>
+    		<li class="list">tag3</li>
+    	</ul>
+    	<div class="panel active">内容1</div>
+    	<div class="panel">内容2</div>
+    	<div class="panel">内容3</div>
+    </div>
+    <div class="model">
+    	<ul class="tab">
+    		<li class="list active">tag1</li>
+    		<li class="list">tag2</li>
+    		<li class="list">tag3</li>
+    	</ul>
+    	<div class="panel active">内容1</div>
+    	<div class="panel">内容2</div>
+    	<div class="panel">内容3</div>
+    </div>
+
+
+	<script>
+	// 原生js方法
+    /*(function(){
+		var model = document.querySelectorAll('.model');
+		var tabWarpper = document.querySelectorAll('.tab');
+		var tabLis = document.querySelectorAll('.model .list');
+		var panel = document.querySelectorAll('.panel');
+
+		tabWarpper[0].addEventListener('click',function(e){
+			if(e.target.tagName.toLowerCase() === 'li'){
+				var clickTarget = e.target
+				var index = [].indexOf.call(tabLis, clickTarget)//借用空数组的indexOf方法,写indexOf()就是调用，写index方法名就是引用
+				// console.log(index)
+				// 下面原生js就是先遍历把下标的active全部去掉一遍，然后在点击的那个上去添加active
+				// console.log(clickTarget.parentNode.children)
+				// clickTarget.parentNode.children.forEach(function(li){
+				//  	li.classList.remove('active')//这里的li返回所有的源生节点
+				//  })
+				tabLis.forEach(function(li){
+					li.classList.remove('active')
+				})
+				tabLis[index].classList.add('active')
+
+				panel.forEach(function(panel){
+					panel.classList.remove('active')
+				})
+				panel[index].classList.add('active')
+
+			}
+		})
+    }())*/
+
+
+
+    // 封装方法一
+    var Tab = (function(){
+    	function tab(options){
+			var tabs = options.querySelector('.tab');//querySelector返回节点
+			var tabLis = options.querySelectorAll('.model .list');//querySelectorAll返回数组
+			var panels = options.querySelectorAll('.panel');//返回数组
+
+			tabs.addEventListener('click',function(e){
+				if(e.target.tagName.toLowerCase() === 'li'){
+					var clickTarget = e.target
+					var index = [].indexOf.call(tabLis, clickTarget)
+
+					tabLis.forEach(function(li){
+						li.classList.remove('active')//数组方法
+					})
+					tabLis[index].classList.add('active')//数组方法
+
+					panels.forEach(function(panel){
+						panel.classList.remove('active')
+					})
+					panels[index].classList.add('active')
+
+				}
+			})
+    	}
+
+    	var obj = {
+    		init:tab
+    	}
+
+    	console.log(obj)
+    	return obj
+    })()
+
+    document.querySelectorAll('.model').forEach(function(ct){//调用前先遍历
+    	Tab.init(ct)
+    })
+	</script>
+
+</body>
+</html>
